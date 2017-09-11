@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import './AddSubscription.css'
 
+// Input component for taking RSS/Atom urls and subscribing to them
 class AddSubscription extends Component {
   state = { url: '' }
 
   handleChange = e => this.setState({ url: e.target.value })
 
-  submit = e => {
-    if (e.key && e.key !== 'Enter') return
+  handleSubmit = e => {
+    if (e.type === 'keydown' && e.key !== 'Enter') return
     console.log(this.state.url)
     this.setState({ url: '' })
   }
@@ -17,11 +18,11 @@ class AddSubscription extends Component {
       <div className="AddSubscription">
         <input type="text"
           value={this.state.url}
-          onKeyDown={this.submit}
+          onKeyDown={this.handleSubmit}
           onChange={this.handleChange}
           placeholder="Enter an RSS/Atom feed url"
         />
-        <button onClick={this.submit}>Subscribe</button>
+        <button onClick={this.handleSubmit}>Subscribe</button>
       </div>
     )
   }

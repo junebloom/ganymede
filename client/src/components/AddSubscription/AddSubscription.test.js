@@ -15,6 +15,6 @@ it('takes input and submits it', () => {
   addSubscription.handleChange({ target: { value } })
   expect(addSubscription.state.url).toBe(value)
 
-  addSubscription.submit({})
+  addSubscription.handleSubmit({})
   expect(addSubscription.state.url).toBe('')
 })
