@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './AddSubscription.css'
 
-class App extends Component {
+class AddSubscription extends Component {
   state = { url: '' }
 
   handleChange = e => this.setState({ url: e.target.value })
@@ -27,4 +27,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default AddSubscription
