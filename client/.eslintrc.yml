@@ -1,5 +1,6 @@
 extends:
   - standard
+  - react-app
 plugins:
   - html
 env:
