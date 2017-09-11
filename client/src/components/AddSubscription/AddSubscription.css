@@ -1,3 +1,35 @@
 .AddSubscription {
-  
+  display: flex;
+  width: 100%;
+}
+
+.AddSubscription input[type=text], .AddSubscription button {
+  padding: 10px;
+  border: none;
+  outline: none;
+  transition: all 200ms;
+}
+
+.AddSubscription input[type=text]:focus, .AddSubscription button:focus {
+  position: relative;
+  z-index: 10000;
+  box-shadow: 0 0 12px rgba(0, 0, 100, 0.25)
+}
+
+.AddSubscription input[type=text] {
+  color: inherit;
+  background: #eeeefa;
+  border-radius: 3px 0 0 3px;
+  flex: 1 0;
+}
+
+.AddSubscription button {
+  color: #f4f4fa;
+  background: #48ace2;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+}
+
+.AddSubscription button:hover {
+  background: #6bc1ef;
 }
