@@ -20,7 +20,7 @@ class AddSubscription extends Component {
           value={this.state.url}
           onKeyDown={this.handleSubmit}
           onChange={this.handleChange}
-          placeholder="Enter an RSS/Atom feed url"
+          placeholder="Enter an RSS/Atom feed URL"
         />
         <button onClick={this.handleSubmit}>Subscribe</button>
       </div>
