@@ -7,7 +7,7 @@ it('renders without crashing', () => {
   ReactDOM.render(<AddSubscription />, div)
 })
 
-it('takes input and submits it', () => {
+it('takes input and clears on submit', () => {
   const div = document.createElement('div')
   const addSubscription = ReactDOM.render(<AddSubscription />, div)
   const value = 'I can change...'
