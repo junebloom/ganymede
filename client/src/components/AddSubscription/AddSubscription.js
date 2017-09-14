@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './AddSubscription.css'
+import Icon from 'react-fontawesome'
 
 // Input component for taking RSS/Atom urls and subscribing to them
 class AddSubscription extends Component {
@@ -15,14 +15,22 @@ class AddSubscription extends Component {
 
   render () {
     return (
-      <div className="AddSubscription">
-        <input type="text"
-          value={this.state.url}
-          onKeyDown={this.handleSubmit}
-          onChange={this.handleChange}
-          placeholder="Enter an RSS/Atom feed URL"
-        />
-        <button onClick={this.handleSubmit}>Subscribe</button>
+      <div className='field has-addons'>
+        <div className='control is-expanded'>
+          <input type='text'
+            className='input'
+            value={this.state.url}
+            onChange={this.handleChange}
+            onKeyDown={this.handleSubmit}
+            placeholder='Enter an RSS/Atom feed URL'
+          />
+        </div>
+        <div className='control'>
+          <button className='button is-primary' onClick={this.handleSubmit}>
+            <Icon className='icon' name='plus'/>
+            <span>Subscribe</span>
+          </button>
+        </div>
       </div>
     )
   }
