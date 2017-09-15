@@ -11,14 +11,6 @@ class Player extends Component {
     url: 'http://traffic.libsyn.com/hellointernet/HI79_FromRussiaWithLove.mp3'
   }
 
-  togglePlayback = () => {
-    this.setState({ paused: !this.state.paused })
-  }
-
-  seek (t) {
-    return () => this.setState({ position: this.state.position + t })
-  }
-
   // Take time in seconds and return a string formatted as hours:minutes:seconds
   formatTime (t) {
     const time = {
@@ -34,9 +26,36 @@ class Player extends Component {
     return `${time.h > 0 ? time.h + ':' : ''}${time.m}:${time.s}`
   }
 
+  togglePlayback = () => {
+    this.setState({ paused: !this.state.paused })
+    this.state.paused ? this.audio.play() : this.audio.pause()
+  }
+
+  seek (t) {
+    return () => {
+      const newTime = this.state.position + t
+      this.setState({ position: newTime })
+      this.audio.currentTime = newTime
+    }
+  }
+
+  trackPosition = () => {
+    this.setState({ position: this.audio.currentTime })
+    window.requestAnimationFrame(this.trackPosition)
+  }
+
+  componentDidMount () {
+    this.trackPosition()
+  }
+
   render () {
     return (
       <div className='Player has-text-centered'>
+        <audio
+          src={this.state.url}
+          ref={audio => { this.audio = audio }}
+        />
+
         <div className='level info is-mobile'>
           <span className='level-left'>
             <span className='level-item has-text-grey-light'>
