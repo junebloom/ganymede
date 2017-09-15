@@ -26,17 +26,14 @@ class Player extends Component {
     return `${time.h > 0 ? time.h + ':' : ''}${time.m}:${time.s}`
   }
 
+  seek (t) {
+    this.setState({ position: t })
+    this.audio.currentTime = t
+  }
+
   togglePlayback = () => {
     this.setState({ paused: !this.state.paused })
     this.state.paused ? this.audio.play() : this.audio.pause()
-  }
-
-  seek (t) {
-    return () => {
-      const newTime = this.state.position + t
-      this.setState({ position: newTime })
-      this.audio.currentTime = newTime
-    }
   }
 
   updateDuration = () => {
@@ -88,7 +85,10 @@ class Player extends Component {
 
         <nav className='level controls is-mobile '>
           <span className='level-item'>
-            <button className='button is-large is-white' onClick={this.seek(-10)}>
+            <button
+              className='button is-large is-white'
+              onClick={() => { this.seek(this.state.position - 10) }}
+            >
               <span className='icon'>
                 <Icon name='rotate-left'/>
               </span>
@@ -96,7 +96,10 @@ class Player extends Component {
           </span>
 
           <span className='level-item'>
-            <button className='button is-large is-white' onClick={this.togglePlayback}>
+            <button
+              className='button is-large is-white'
+              onClick={this.togglePlayback}
+            >
               <span className='icon'>
                 <Icon name={this.state.paused ? 'play' : 'pause'} size='2x'/>
               </span>
@@ -104,7 +107,10 @@ class Player extends Component {
           </span>
 
           <span className='level-item'>
-            <button className='button is-large is-white' onClick={this.seek(30)}>
+            <button
+              className='button is-large is-white'
+              onClick={() => { this.seek(this.state.position + 30) }}
+            >
               <span className='icon'>
                 <Icon name='rotate-right'/>
               </span>
