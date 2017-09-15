@@ -82,9 +82,14 @@ class Player extends Component {
         </div>
 
         <progress
-          className='progress is-primary is-small'
+          className='progress is-primary'
           value={this.state.position}
           max={this.state.duration}
+          onClick={e => {
+            const rect = e.target.getBoundingClientRect()
+            const pos = (e.clientX - rect.x) / (rect.width - 1)
+            this.seek(pos * this.state.duration)
+          }}
         />
 
         <nav className='level controls is-mobile '>
