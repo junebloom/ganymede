@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import './App.css'
-import AddSubscription from '../AddSubscription/AddSubscription'
+import Player from '../Player/Player'
 
 class App extends Component {
   render () {
     return (
       <div className="App">
-        Hey, universe. It's me, you.
-        <AddSubscription/>
+        <Player/>
       </div>
     )
   }

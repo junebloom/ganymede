@@ -1,0 +1,33 @@
+.Player {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.Player .progress {
+  margin: 0;
+  cursor: pointer;
+}
+
+.Player .controls {
+  margin: auto;
+  padding: 1rem;
+  max-width: 30rem;
+}
+
+.Player .info {
+  margin: 0;
+}
+
+.Player .episode-title {
+  flex-shrink: 1;
+  margin: 0 0.5rem;
+  overflow: hidden;
+}
+
+.Player .episode-title-link {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
