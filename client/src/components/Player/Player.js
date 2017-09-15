@@ -16,7 +16,7 @@ class Player extends Component {
     const time = {
       h: Math.floor(t / 3600),
       m: Math.floor(t / 60) % 60,
-      s: t % 60
+      s: Math.floor(t) % 60
     }
 
     for (const unit of ['m', 's']) {
