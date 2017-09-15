@@ -26,20 +26,24 @@ class Player extends Component {
     return `${time.h > 0 ? time.h + ':' : ''}${time.m}:${time.s}`
   }
 
+  // Seek playback to time t
   seek (t) {
     this.setState({ position: t })
     this.audio.currentTime = t
   }
 
+  // Pause or unpause
   togglePlayback = () => {
     this.setState({ paused: !this.state.paused })
     this.state.paused ? this.audio.play() : this.audio.pause()
   }
 
+  // Update duration of audio file
   updateDuration = () => {
     this.setState({ duration: this.audio.duration })
   }
 
+  // Keep position state in sync with playback position
   trackPosition = () => {
     this.setState({ position: this.audio.currentTime })
     window.requestAnimationFrame(this.trackPosition)
