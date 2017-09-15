@@ -80,8 +80,7 @@ class Player extends Component {
           className='progress is-primary is-small'
           value={this.state.position}
           max={this.state.duration}
-        >
-        </progress>
+        />
 
         <nav className='level controls is-mobile '>
           <span className='level-item'>
