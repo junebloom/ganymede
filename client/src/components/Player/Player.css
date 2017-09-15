@@ -1,8 +1,9 @@
 .Player {
+  background: white;
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding: 0 1rem;
+  padding: 1rem;
 }
 
 .Player .progress {
@@ -12,7 +13,7 @@
 
 .Player .controls {
   margin: auto;
-  padding: 1rem;
+  padding-top: 1rem;
   max-width: 30rem;
 }
 
