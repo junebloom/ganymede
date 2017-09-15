@@ -5,8 +5,8 @@ import './Player.css'
 class Player extends Component {
   state = {
     paused: true,
-    position: 2222,
-    length: 5890,
+    position: 0,
+    duration: 0,
     title: 'H.I. #79 From Russia with Love',
     url: 'http://traffic.libsyn.com/hellointernet/HI79_FromRussiaWithLove.mp3'
   }
@@ -39,6 +39,10 @@ class Player extends Component {
     }
   }
 
+  updateDuration = () => {
+    this.setState({ duration: this.audio.duration })
+  }
+
   trackPosition = () => {
     this.setState({ position: this.audio.currentTime })
     window.requestAnimationFrame(this.trackPosition)
@@ -54,6 +58,7 @@ class Player extends Component {
         <audio
           src={this.state.url}
           ref={audio => { this.audio = audio }}
+          onDurationChange={this.updateDuration}
         />
 
         <div className='level info is-mobile'>
@@ -69,7 +74,7 @@ class Player extends Component {
 
           <span className='level-right has-text-grey-light'>
             <span className='level-item'>
-              {this.formatTime(this.state.length - this.state.position)}
+              {this.formatTime(this.state.duration - this.state.position)}
             </span>
           </span>
         </div>
@@ -77,7 +82,7 @@ class Player extends Component {
         <progress
           className='progress is-primary is-small'
           value={this.state.position}
-          max={this.state.length}
+          max={this.state.duration}
         >
         </progress>
 
