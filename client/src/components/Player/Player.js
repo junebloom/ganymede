@@ -95,7 +95,7 @@ class Player extends Component {
         <nav className='level controls is-mobile '>
           <span className='level-item'>
             <button
-              className='button is-large is-white'
+              className='control button is-large'
               onClick={() => { this.seek(this.state.position - 10) }}
             >
               <span className='icon'>
@@ -106,7 +106,7 @@ class Player extends Component {
 
           <span className='level-item'>
             <button
-              className='button is-large is-white'
+              className='control button is-large'
               onClick={this.togglePlayback}
             >
               <span className='icon'>
@@ -117,7 +117,7 @@ class Player extends Component {
 
           <span className='level-item'>
             <button
-              className='button is-large is-white'
+              className='control button is-large'
               onClick={() => { this.seek(this.state.position + 30) }}
             >
               <span className='icon'>

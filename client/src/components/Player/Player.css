@@ -17,6 +17,16 @@
   max-width: 30rem;
 }
 
+.Player .control {
+  border: none;
+  color: inherit;
+}
+
+.Player .control:hover {
+  background: transparent;
+  color: hsl(171, 100%, 41%);
+}
+
 .Player .info {
   margin: 0;
 }
