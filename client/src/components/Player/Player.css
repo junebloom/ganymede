@@ -1,8 +1,9 @@
 .Player {
+  background: white;
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding: 0 1rem;
+  padding: 1rem;
 }
 
 .Player .progress {
@@ -12,8 +13,18 @@
 
 .Player .controls {
   margin: auto;
-  padding: 1rem;
+  padding-top: 1rem;
   max-width: 30rem;
+}
+
+.Player .control {
+  border: none;
+  color: inherit;
+}
+
+.Player .control:hover {
+  background: transparent;
+  color: hsl(171, 100%, 41%);
 }
 
 .Player .info {
