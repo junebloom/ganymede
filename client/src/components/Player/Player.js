@@ -35,7 +35,8 @@ class Player extends Component {
   // Pause or unpause
   togglePlayback = () => {
     this.setState({ paused: !this.state.paused })
-    this.state.paused ? this.audio.play() : this.audio.pause()
+    if (this.state.paused) this.audio.play()
+    else this.audio.pause()
   }
 
   // Update duration of audio file
