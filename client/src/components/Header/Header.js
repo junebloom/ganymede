@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Icon from 'react-fontawesome'
+import AddSubscription from '../AddSubscription/AddSubscription'
 import './Header.css'
 
 class Header extends Component {
@@ -15,12 +16,7 @@ class Header extends Component {
       </div>
       <div className='level-right field is-grouped'>
         <div className='control'>
-          <a className='button is-primary is-outlined'>
-            <p>Add</p>
-            <span className='icon'>
-              <Icon name='feed'/>
-            </span>
-          </a>
+          <AddSubscription/>
         </div>
         <div className='control'>
           <a className='button is-primary'>
