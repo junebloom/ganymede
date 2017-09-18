@@ -7,13 +7,12 @@
 }
 
 .Player .progress {
-  margin: 0;
+  margin-bottom: 1rem;
   cursor: pointer;
 }
 
 .Player .controls {
   margin: auto;
-  padding-top: 1rem;
   max-width: 30rem;
 }
 
