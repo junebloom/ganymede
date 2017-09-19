@@ -4,6 +4,12 @@ import AddSubscription from '../AddSubscription/AddSubscription'
 import './Header.css'
 
 class Header extends Component {
+  state = {
+    isAddExpanded: false
+  }
+
+  setAddExpanded = expand => this.setState({ isAddExpanded: expand })
+
   render = () => (
     <nav className='Header level is-mobile'>
       <div className='level-left'>
@@ -16,7 +22,10 @@ class Header extends Component {
       </div>
       <div className='level-right field is-grouped'>
         <div className='control'>
-          <AddSubscription/>
+          <AddSubscription
+            expanded={this.state.isAddExpanded}
+            setExpanded={this.setAddExpanded}
+          />
         </div>
         <div className='control'>
           <a className='button is-primary'>

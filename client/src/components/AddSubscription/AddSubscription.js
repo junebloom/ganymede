@@ -5,24 +5,22 @@ import Icon from 'react-fontawesome'
 // Input component for taking RSS/Atom urls and subscribing to them
 class AddSubscription extends Component {
   state = {
-    expanded: false,
     url: ''
-  }
-
-  expand = () => {
-    this.setState({ expanded: true })
   }
 
   handleChange = e => this.setState({ url: e.target.value })
 
   submit = e => {
     if (e.type === 'keydown' && e.key !== 'Enter') return
+
     console.log(this.state.url)
-    this.setState({
-      expanded: false,
-      url: ''
-    })
+
+    this.contract()
+    this.setState({ url: '' })
   }
+
+  expand = () => this.props.setExpanded(true)
+  contract = () => this.props.setExpanded(false)
 
   render () {
     let input = (
@@ -36,21 +34,18 @@ class AddSubscription extends Component {
         />
       </div>
     )
-
-    if (!this.state.expanded) input = null
-
     return (
       <div className='AddSubscription'>
         <div className='field has-addons'>
-          {input}
+          {this.props.expanded ? input : null}
           <div className='control'>
             <a
               className='button is-primary is-outlined'
-              onClick={this.state.expanded ? this.submit : this.expand}
+              onClick={this.props.expanded ? this.contract : this.expand}
             >
               <p>Add</p>
               <span className='icon'>
-                <Icon name={this.state.expanded ? 'plus' : 'feed'}/>
+                <Icon name={this.props.expanded ? 'plus' : 'feed'}/>
               </span>
             </a>
           </div>

@@ -9,7 +9,10 @@ it('renders without crashing', () => {
 
 it('takes input and clears on submit', () => {
   const div = document.createElement('div')
-  const addSubscription = ReactDOM.render(<AddSubscription />, div)
+  const addSubscription = ReactDOM.render(
+    <AddSubscription setExpanded={ () => {} }/>,
+    div
+  )
   const value = 'I can change...'
 
   addSubscription.handleChange({ target: { value } })
