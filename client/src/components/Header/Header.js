@@ -1,25 +1,12 @@
 import React, { Component } from 'react'
 import Icon from 'react-fontawesome'
-import AddSubscription from '../AddSubscription/AddSubscription'
 import './Header.css'
 
 class Header extends Component {
-  state = {
-    isAddExpanded: false
-  }
-
-  setAddExpanded = expand => this.setState({ isAddExpanded: expand })
-
   render = () => (
     <nav className='Header level is-mobile'>
       <div className='level-left'>
-        <span className={
-          `icon is-large ${
-            this.state.isAddExpanded
-              ? 'is-hidden-mobile'
-              : ''
-          }`
-        }>
+        <span className='icon is-large'>
           <Icon name='rocket' size='3x'/>
         </span>
 
@@ -31,19 +18,15 @@ class Header extends Component {
       <div className='level-right'>
         <div className='field is-grouped'>
           <div className='control'>
-            <AddSubscription
-              expanded={this.state.isAddExpanded}
-              setExpanded={this.setAddExpanded}
-            />
+            <a className='button is-primary is-outlined'>
+              <p>Add</p>
+              <span className='icon'>
+                <Icon name='feed'/>
+              </span>
+            </a>
           </div>
 
-          <div className={
-            `control ${
-              this.state.isAddExpanded
-                ? 'is-hidden-mobile'
-                : ''
-            }`
-          }>
+          <div className='control'>
             <a className='button is-primary'>
               <span className='icon'>
                 <Icon name='user-circle'/>
