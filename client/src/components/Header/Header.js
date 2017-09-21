@@ -9,26 +9,31 @@ class Header extends Component {
         <span className='icon is-large'>
           <Icon name='rocket' size='3x'/>
         </span>
+
         <h1 className='is-size-2 has-text-weight-bold is-hidden-mobile'>
           Ganymede
         </h1>
       </div>
-      <div className='level-right field is-grouped'>
-        <div className='control'>
-          <a className='button is-primary is-outlined'>
-            <p>Add</p>
-            <span className='icon'>
-              <Icon name='feed'/>
-            </span>
-          </a>
-        </div>
-        <div className='control'>
-          <a className='button is-primary'>
-            <span className='icon'>
-              <Icon name='user-circle'/>
-            </span>
-            <p>Sign in</p>
-          </a>
+
+      <div className='level-right'>
+        <div className='field is-grouped'>
+          <div className='control'>
+            <a className='button is-primary is-outlined'>
+              <p>Add</p>
+              <span className='icon'>
+                <Icon name='feed'/>
+              </span>
+            </a>
+          </div>
+
+          <div className='control'>
+            <a className='button is-primary'>
+              <span className='icon'>
+                <Icon name='user-circle'/>
+              </span>
+              <p>Sign in</p>
+            </a>
+          </div>
         </div>
       </div>
     </nav>
