@@ -50,6 +50,8 @@ class Player extends Component {
     window.requestAnimationFrame(this.trackPosition)
   }
 
+  // Begin tracking playback position when the component mounts
+  // TODO: Stop on unmount?
   componentDidMount () {
     this.trackPosition()
   }
@@ -64,6 +66,7 @@ class Player extends Component {
         />
 
         <div className='level info is-mobile'>
+          {/* Current time in audio */}
           <span className='level-left'>
             <span className='level-item has-text-grey-light'>
               {this.formatTime(this.state.position)}
@@ -74,6 +77,7 @@ class Player extends Component {
             <a className='episode-title-link'>{this.state.title}</a>
           </span>
 
+          {/* Time remaining */}
           <span className='level-right has-text-grey-light'>
             <span className='level-item'>
               {this.formatTime(this.state.duration - this.state.position)}
@@ -93,6 +97,7 @@ class Player extends Component {
         />
 
         <nav className='level controls is-mobile '>
+          {/* Seek backwards */}
           <span className='level-item'>
             <button
               className='control button is-large'
@@ -104,6 +109,7 @@ class Player extends Component {
             </button>
           </span>
 
+          {/* Play/pause */}
           <span className='level-item'>
             <button
               className='control button is-large'
@@ -115,6 +121,7 @@ class Player extends Component {
             </button>
           </span>
 
+          {/* Seek forward */}
           <span className='level-item'>
             <button
               className='control button is-large'
