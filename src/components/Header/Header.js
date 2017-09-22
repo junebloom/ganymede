@@ -1,15 +1,12 @@
 import React, { Component } from 'react'
-import Icon from 'react-fontawesome'
+import Icon from '../Icon/Icon'
 import './Header.css'
 
 class Header extends Component {
   render = () => (
     <nav className='Header level is-mobile'>
       <div className='level-left'>
-        <span className='icon is-large'>
-          <Icon name='rocket' size='3x'/>
-        </span>
-
+        <Icon name='rocket' size='3x'/>
         <h1 className='is-size-2 has-text-weight-bold is-hidden-mobile'>
           Ganymede
         </h1>
@@ -20,17 +17,13 @@ class Header extends Component {
           <div className='control'>
             <a className='button is-primary is-outlined'>
               <p>Add</p>
-              <span className='icon'>
-                <Icon name='feed'/>
-              </span>
+              <Icon name='feed'/>
             </a>
           </div>
 
           <div className='control'>
             <a className='button is-primary'>
-              <span className='icon'>
-                <Icon name='user-circle'/>
-              </span>
+              <Icon name='user-circle'/>
               <p>Sign in</p>
             </a>
           </div>
