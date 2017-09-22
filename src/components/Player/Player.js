@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Icon from 'react-fontawesome'
+import Icon from '../Icon/Icon'
 import './Player.css'
 
 class Player extends Component {
@@ -103,9 +103,7 @@ class Player extends Component {
               className='control button is-large'
               onClick={() => { this.seek(this.state.position - 10) }}
             >
-              <span className='icon'>
-                <Icon name='rotate-left'/>
-              </span>
+              <Icon name='rotate-left'/>
             </button>
           </span>
 
@@ -115,9 +113,7 @@ class Player extends Component {
               className='control button is-large'
               onClick={this.togglePlayback}
             >
-              <span className='icon'>
-                <Icon name={this.state.paused ? 'play' : 'pause'} size='2x'/>
-              </span>
+              <Icon name={this.state.paused ? 'play' : 'pause'} size='2x'/>
             </button>
           </span>
 
@@ -127,9 +123,7 @@ class Player extends Component {
               className='control button is-large'
               onClick={() => { this.seek(this.state.position + 30) }}
             >
-              <span className='icon'>
-                <Icon name='rotate-right'/>
-              </span>
+              <Icon name='rotate-right'/>
             </button>
           </span>
         </nav>
