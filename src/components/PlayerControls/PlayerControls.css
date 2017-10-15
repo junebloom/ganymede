@@ -1,4 +1,4 @@
-.Player {
+.PlayerControls {
   background: white;
   position: fixed;
   bottom: 0;
@@ -6,37 +6,37 @@
   padding: 1rem;
 }
 
-.Player .progress {
+.PlayerControls .progress {
   margin-bottom: 1rem;
   cursor: pointer;
 }
 
-.Player .controls {
+.PlayerControls .controls {
   margin: auto;
   max-width: 30rem;
 }
 
-.Player .control {
+.PlayerControls .control {
   border: none;
   color: inherit;
 }
 
-.Player .control:hover {
+.PlayerControls .control:hover {
   background: transparent;
   color: hsl(171, 100%, 41%);
 }
 
-.Player .info {
+.PlayerControls .info {
   margin: 0;
 }
 
-.Player .episode-title {
+.PlayerControls .episode-title {
   flex-shrink: 1;
   margin: 0 0.5rem;
   overflow: hidden;
 }
 
-.Player .episode-title-link {
+.PlayerControls .episode-title-link {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
