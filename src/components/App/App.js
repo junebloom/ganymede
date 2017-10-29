@@ -4,11 +4,11 @@ import Header from '../Header/Header'
 import Player from '../Player/Player'
 
 class App extends Component {
-  render () {
+  render() {
     return (
       <div className="App">
-        <Header/>
-        <Player/>
+        <Header />
+        <Player />
       </div>
     )
   }
