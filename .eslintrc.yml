@@ -1,7 +1,20 @@
 extends:
+  - eslint:recommended
+  - plugin:react/recommended
   - standard
-  - react-app
+  - prettier
+  - prettier/standard
 plugins:
-  - html
-env:
-  browser: true
+  - prettier
+  - react
+parser: babel-eslint
+parserOptions:
+  ecmaVersion: 2017
+  ecmaFeatures:
+    jsx: true
+rules:
+  prettier/prettier:
+    - error
+    -
+      semi: false
+      singleQuote: true
