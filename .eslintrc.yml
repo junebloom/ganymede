@@ -18,3 +18,7 @@ rules:
     -
       semi: false
       singleQuote: true
+overrides:
+  files: '**/*.test.js'
+  env:
+    jest: true
