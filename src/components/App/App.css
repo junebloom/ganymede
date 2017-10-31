@@ -2,3 +2,7 @@ html {
   overflow: auto;
   background: #eee;
 }
+
+main {
+  padding: 0 1rem;
+}
