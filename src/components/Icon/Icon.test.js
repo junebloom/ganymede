@@ -4,5 +4,5 @@ import Icon from './Icon'
 
 it('renders without crashing', () => {
   const div = document.createElement('div')
-  ReactDOM.render(<Icon name='star'/>, div)
+  ReactDOM.render(<Icon name="star" />, div)
 })
