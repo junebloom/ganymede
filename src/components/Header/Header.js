@@ -24,7 +24,7 @@ class Header extends Component {
           <div className="control">
             <a className="button is-primary">
               <Icon name="user-circle" />
-              <p>Sign in</p>
+              <p>Log in</p>
             </a>
           </div>
         </div>

@@ -8,6 +8,7 @@ import {
 import './App.css'
 import Header from '../Header/Header'
 import Player from '../Player/Player'
+import Login from '../Login/Login'
 
 const App = () => (
   <Router>
@@ -17,6 +18,7 @@ const App = () => (
       <main>
         <Switch>
           <Route exact path="/" render={() => <div />} />
+          <Route path="/login" component={Login} />
           <Redirect to="/" />
         </Switch>
       </main>
