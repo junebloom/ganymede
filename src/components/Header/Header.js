@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import Icon from '../Icon/Icon'
 import './Header.css'
 
@@ -22,10 +23,10 @@ class Header extends Component {
           </div>
 
           <div className="control">
-            <a className="button is-primary">
+            <Link className="button is-primary" to="/login">
               <Icon name="user-circle" />
               <p>Log in</p>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
