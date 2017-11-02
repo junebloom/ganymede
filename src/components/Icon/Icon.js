@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import FaIcon from 'react-fontawesome'
 
 class Icon extends Component {
@@ -12,6 +13,11 @@ class Icon extends Component {
       </span>
     )
   }
+}
+
+Icon.propTypes = {
+  name: PropTypes.string.isRequired,
+  size: PropTypes.number.isRequired
 }
 
 export default Icon

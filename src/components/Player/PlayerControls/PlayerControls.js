@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import Icon from '../../Icon/Icon'
 import './PlayerControls.css'
 
@@ -92,6 +93,15 @@ class PlayerControls extends Component {
       </nav>
     </div>
   )
+}
+
+PlayerControls.propTypes = {
+  title: PropTypes.string.isRequired,
+  duration: PropTypes.number.isRequired,
+  time: PropTypes.number.isRequired,
+  paused: PropTypes.bool.isRequired,
+  setTime: PropTypes.func.isRequired,
+  togglePlayback: PropTypes.func.isRequired
 }
 
 export default PlayerControls
