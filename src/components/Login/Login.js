@@ -30,10 +30,6 @@ class Login extends Component {
 
       <div className="field has-addons">
         <div className="control has-icons-left is-expanded">
-          <span className="icon is-left">
-            <Icon name="envelope" />
-          </span>
-
           <input
             className="input"
             type="email"
@@ -42,6 +38,10 @@ class Login extends Component {
             onChange={this.handleChange}
             disabled={this.state.sending}
           />
+
+          <span className="icon is-left">
+            <Icon name="envelope" />
+          </span>
         </div>
 
         <div className="control">
