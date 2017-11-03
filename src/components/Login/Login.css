@@ -3,3 +3,11 @@
   margin: auto;
   margin-top: 25vh;
 }
+
+.Login .title {
+  margin: 0;
+}
+
+.Login .field {
+  margin: 0.75rem 0;
+}
