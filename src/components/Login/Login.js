@@ -4,16 +4,18 @@ import Icon from '../Icon/Icon'
 import './Login.css'
 
 class Login extends Component {
-  state = { email: '' }
+  state = { email: '', sending: false }
 
   handleChange = event => {
     this.setState({ email: event.target.value })
   }
 
-  requestLogin = () => {
-    fetch(`http://localhost:4000/loginlink?email=${this.state.email}`, {
+  requestLogin = async () => {
+    this.setState({ sending: true })
+    await fetch(`http://localhost:4000/loginlink?email=${this.state.email}`, {
       method: 'post'
     })
+    this.setState({ sending: false })
   }
 
   render = () => (
@@ -38,11 +40,18 @@ class Login extends Component {
             placeholder="Email"
             value={this.state.email}
             onChange={this.handleChange}
+            disabled={this.state.sending}
           />
         </div>
 
         <div className="control">
-          <button className="button is-primary" onClick={this.requestLogin}>
+          <button
+            className={`button is-primary${this.state.sending
+              ? ' is-loading'
+              : ''}`}
+            onClick={this.requestLogin}
+            disabled={this.state.sending}
+          >
             Log in
           </button>
         </div>
