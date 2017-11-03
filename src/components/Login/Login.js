@@ -4,6 +4,18 @@ import Icon from '../Icon/Icon'
 import './Login.css'
 
 class Login extends Component {
+  state = { email: '' }
+
+  handleChange = event => {
+    this.setState({ email: event.target.value })
+  }
+
+  requestLogin = () => {
+    fetch(`http://localhost:4000/loginlink?email=${this.state.email}`, {
+      method: 'post'
+    })
+  }
+
   render = () => (
     <div className="Login">
       <h4 className="title is-4">
@@ -16,13 +28,23 @@ class Login extends Component {
 
       <div className="field has-addons">
         <div className="control has-icons-left is-expanded">
-          <input className="input" type="email" placeholder="Email" />
           <span className="icon is-left">
             <Icon name="envelope" />
           </span>
+
+          <input
+            className="input"
+            type="email"
+            placeholder="Email"
+            value={this.state.email}
+            onChange={this.handleChange}
+          />
         </div>
+
         <div className="control">
-          <button className="button is-primary">Log in</button>
+          <button className="button is-primary" onClick={this.requestLogin}>
+            Log in
+          </button>
         </div>
       </div>
 
