@@ -17,13 +17,14 @@ class Login extends Component {
   requestLogin = async event => {
     event.preventDefault()
     this.setState({ status: 'sending' })
-
     let res = null
+
     try {
       res = await fetch(`http://localhost:4000/login/${this.state.email}`, {
         method: 'post'
       })
     } catch (error) {
+      console.error(error)
       this.setState({
         status: 'error',
         message: `Oh no, could not contact the login server.`
@@ -31,16 +32,18 @@ class Login extends Component {
       return
     }
 
-    if (res.ok)
+    if (res.ok) {
       this.setState({
         status: 'success',
         message: 'Please check your inbox for your authentication link.'
       })
-    else
+    } else {
+      console.error(`${res.status} ${res.statusText}`, await res.json())
       this.setState({
         status: 'error',
         message: `Oh no, there was a problem: ${res.status} ${res.statusText}`
       })
+    }
   }
 
   render = () => {
