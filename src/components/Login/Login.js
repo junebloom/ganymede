@@ -20,10 +20,9 @@ class Login extends Component {
 
     let res = null
     try {
-      res = await fetch(
-        `http://localhost:4000/loginlink?email=${this.state.email}`,
-        { method: 'post' }
-      )
+      res = await fetch(`http://localhost:4000/login/${this.state.email}`, {
+        method: 'post'
+      })
     } catch (error) {
       this.setState({
         status: 'error',
