@@ -9,6 +9,7 @@ import './App.css'
 import Header from '../Header/Header'
 import Player from '../Player/Player'
 import Login from '../Login/Login'
+import Auth from '../Auth/Auth'
 
 const App = () => (
   <Router>
@@ -18,7 +19,8 @@ const App = () => (
       <main>
         <Switch>
           <Route exact path="/" render={() => <div />} />
-          <Route path="/login" component={Login} />
+          <Route exact path="/login" component={Login} />
+          <Route path="/auth/:token" component={Auth} />
           <Redirect to="/" />
         </Switch>
       </main>
