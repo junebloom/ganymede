@@ -16,10 +16,11 @@ class Auth extends Component {
     let res = null
 
     try {
-      res = await fetch(
-        `http://localhost:4000/auth/${this.props.match.params.token}`,
-        { method: 'post' }
-      )
+      res = await fetch('http://localhost:4000/auth', {
+        method: 'post',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ authToken: this.props.match.params.token })
+      })
     } catch (error) {
       console.error(error)
       this.setState({
