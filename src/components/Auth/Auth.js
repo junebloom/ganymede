@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Redirect } from 'react-router-dom'
 
+// Authorizes the user via a login token provided as a URL parameter
+// This is where the user lands when clicking a login link in their email
 class Auth extends Component {
   state = {
     status: 'ready',
@@ -13,6 +15,8 @@ class Auth extends Component {
       status: 'sending',
       message: 'Authenticating...'
     })
+
+    // HTTP response from auth server
     let res = null
 
     try {
@@ -31,8 +35,11 @@ class Auth extends Component {
     }
 
     if (res.ok) {
+      // Store the new auth token for future use
       localStorage.setItem('authToken', await res.json())
       this.setState({ status: 'success' })
+
+      // TODO: Decode and store jwt content for use throughout the application
     } else {
       console.error(`${res.status} ${res.statusText}`, await res.json())
       this.setState({
@@ -42,6 +49,7 @@ class Auth extends Component {
     }
   }
 
+  // Show any error status to user
   render = () => {
     let messageClassName = 'has-text-centered'
     if (this.state.status === 'error')
