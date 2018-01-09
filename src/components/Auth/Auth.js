@@ -35,13 +35,12 @@ class Auth extends Component {
     }
 
     if (res.ok) {
-      // Store the new auth token for future use
-      localStorage.setItem('authToken', await res.json())
+      // Store the new auth token for authorizing future requests
+      const authToken = await res.json()
+      localStorage.setItem('authToken', authToken)
       this.setState({ status: 'success' })
-
-      // TODO: Decode and store jwt content for use throughout the application
     } else {
-      console.error(`${res.status} ${res.statusText}`, await res.json())
+      console.error(`${res.status} ${res.statusText}`, res.json())
       this.setState({
         status: 'error',
         message: `Oh no, there was a problem: ${res.status} ${res.statusText}`

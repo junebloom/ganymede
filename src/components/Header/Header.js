@@ -21,11 +21,13 @@ class Header extends Component {
               <Icon name="feed" />
             </a>
           </div>
-
           <div className="control">
-            <Link className="button is-primary" to="/login">
+            <Link
+              className="button is-primary"
+              to={window.user ? '/logout' : '/login'}
+            >
               <Icon name="user-circle" />
-              <p>Log in</p>
+              <p>{window.user ? 'Log out' : 'Log in'}</p>
             </Link>
           </div>
         </div>

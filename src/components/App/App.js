@@ -6,6 +6,7 @@ import {
   Redirect
 } from 'react-router-dom'
 import './App.css'
+import PopulateUser from '../PopulateUser/PopulateUser'
 import Header from '../Header/Header'
 import Player from '../Player/Player'
 import Login from '../Login/Login'
@@ -14,6 +15,7 @@ import Auth from '../Auth/Auth'
 const App = () => (
   <Router>
     <div className="App">
+      <PopulateUser />
       <Header />
 
       <main>
