@@ -38,6 +38,7 @@ class Auth extends Component {
       // Store the new auth token for authorizing future requests
       const authToken = await res.json()
       localStorage.setItem('authToken', authToken)
+      this.props.setUser(authToken)
       this.setState({ status: 'success' })
     } else {
       console.error(`${res.status} ${res.statusText}`, res.json())
@@ -63,7 +64,8 @@ class Auth extends Component {
 }
 
 Auth.propTypes = {
-  match: PropTypes.object.isRequired
+  match: PropTypes.object.isRequired,
+  setUser: PropTypes.func.isRequired
 }
 
 export default Auth
