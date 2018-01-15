@@ -17,7 +17,7 @@ class Icon extends Component {
 
 Icon.propTypes = {
   name: PropTypes.string.isRequired,
-  size: PropTypes.number.isRequired
+  size: PropTypes.string
 }
 
 export default Icon

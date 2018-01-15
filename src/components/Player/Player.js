@@ -30,6 +30,7 @@ class Player extends Component {
     this.setState({ paused: this.audio.paused })
   }
 
+  // Syncronize the react state with the actual playback position
   componentDidMount = () => {
     const syncTime = () => {
       this.setState({ time: this.audio.currentTime })

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import Icon from '../Icon/Icon'
 import './Header.css'
 
@@ -20,17 +22,34 @@ class Header extends Component {
               <Icon name="feed" />
             </a>
           </div>
-
           <div className="control">
-            <a className="button is-primary">
-              <Icon name="user-circle" />
-              <p>Sign in</p>
-            </a>
+            {this.props.user ? (
+              <a
+                className="button is-primary"
+                onClick={() => {
+                  localStorage.removeItem('authToken')
+                  this.props.setUser(null)
+                }}
+              >
+                <Icon name="sign-out" />
+                <p>Log out</p>
+              </a>
+            ) : (
+              <Link className="button is-primary" to="/login">
+                <Icon name="sign-in" />
+                <p>Log in</p>
+              </Link>
+            )}
           </div>
         </div>
       </div>
     </nav>
   )
+}
+
+Header.propTypes = {
+  setUser: PropTypes.func.isRequired,
+  user: PropTypes.oneOf(PropTypes.object, null)
 }
 
 export default Header
